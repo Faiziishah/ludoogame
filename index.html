@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ludo_game</title>
+</head>
+<style>
+    .button {
+    font-size: 34px;
+    
+    border-radius: 50%;
+
+    background-color: white;
+    color: black;
+    border: 2px solid #fa0808;
+
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+  .column {
+    flex: 3.33%;
+    padding: 5px;
+
+   
+  }
+ .mwin
+  {font-family: "Times New Roman", Times, serif}
+</style>
+
+<body style="background-image: url(images/wp9514558.jpg); background-position: top; background-size: 200vh;background-repeat: no-repeat;">
+   
+    <h1><b style=" background-color: rgb(250, 138, 138);
+        color: rgb(44, 1, 1);
+        border: 2px #3d0202;">LUDO_GAME</b></h1>
+    <button class="button"   id="start_game" style=" color: brown; " > Start</button>
+    <div class="row">
+     
+      
+<div class="column">
+    <h2 style="color: blue; font-style: unset; font-size: 5vh;">player</h2>
+    <img id="player_1"  alt="" width="200px" height="200px">
+</div>
+<div class="column">
+    <h2 style="color: rgb(139, 15, 255); font-style: inherit; font-size: 5vh;">AI[]</h2>
+    <img id="player_2"  alt="" width="200px" height="200px">
+</div>
+<div class="mwin">
+    <h3 style="font-style: serif; color: rgb(242, 73, 0);font-size: 5vh; "> match winner is__==</h3> <h2 id="winner" style="font-size: 10vh;color: #fa0808;">  </h2>
+</div>
+
+      
+    </div>
+    
+    <footer>
+        <h1 style="color: rgb(0, 13, 255); font-style: initial;font-size: 10vh;"><b><i>created by : <u>faizii shah</u> </i></b></h1>
+    </footer>
+
+    <script>
+        
+let player_1= 0;
+let player_2=0;
+let player1_img=document.getElementById("player_1")
+let player2_img=document.getElementById("player_2")
+let winner=document.getElementById("winner")
+let start=document.getElementById("start_game")
+ start.addEventListener("click",()=>{
+
+ player_1=Math.round(Math.random()*6)
+ player_1=player_1>0?player_1:1;
+ player_2=Math.round(Math.random()*6);
+ player_2=player_2>0?player_2:1
+
+   player1_img.src= `./images/dice-${player_1}.png`
+   player2_img.src= `./images/dice-${player_2}.png`
+
+if (player_1 <player_2){
+    winner.textContent=" congrates'YOU_wins."
+   
+}
+else if (player_2<player_1){
+    winner.textContent="AI_wins."
+}
+    else {
+winner.textContent="match_level."
+}
+ })
+
+    </script>
+</body>
+
+</html>
